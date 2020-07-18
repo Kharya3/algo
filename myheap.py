@@ -1,3 +1,4 @@
+
 class MyMinHeap:
 
     def __init__(self):
@@ -16,17 +17,17 @@ class MyMinHeap:
                 i //= 2
             else:
                 break
-
+            
     def ext_min(self):
         mn = self.Heap[1]
-        self.Heap[1] = self.Heap[-1]
+        self.Heap[1] = self.Heap[self.size]
         r = self.Heap.pop()
         self.size -= 1
         self.__b_down(1)
         return mn
 
     def __b_down(self, i):
-        while 2 * i <= self.size:
+        while 2*i <= self.size:
             min_index = self.find_min_child(i)
             if self.Heap[i] > self.Heap[min_index]:
                 self.Heap[i], self.Heap[min_index] = self.Heap[min_index], self.Heap[i]
@@ -35,45 +36,36 @@ class MyMinHeap:
                 break
 
     def find_min_child(self, i):
-        if 2 * i + 1 > self.size or self.Heap[2 * i] < self.Heap[2 * i + 1]:
-            return 2 * i
+        if 2*i+1 > self.size or self.Heap[2*i] < self.Heap[2*i +1]:
+            return 2*i
         else:
-            return 2 * i + 1
+            return 2*i + 1
 
     def heapify(self, arr):
         self.size = len(arr)
         self.Heap += arr
-        for i in range(self.size // 2, -1, -1):
+        for i in range(self.size//2, -1, -1):
             self.__b_down(i)
 
-    def delete(self, x):
-        index = self.Heap.index(x)
-        self.Heap[index] = self.Heap[-1]
-        self.Heap.pop()
-        self.size -= 1
-        self.__b_down(index)
-
-    def change_key(self, wgt, prev_value):
+    def change_key(self, new_value, prev_value):
         index = self.Heap.index(prev_value)
-        self.Heap[index][1] = wgt
+        wgt = new_value[1]
+        self.Heap[index] = wgt
         self.__b_up(index)
 
-    def pr_heap(self):
-        for i in range(1, self.size // 2 + 1):
-            if i == self.size // 2 and 2 * i + 1 > self.size:
+    def prnt(self):
+        for i in range(1, self.size//2 + 1):
+            if i == self.size//2 and 2*i + 1 > self.size:
                 print(self.Heap[i], "---", self.Heap[2 * i])
                 break
-            print(self.Heap[i], "---", self.Heap[2 * i], ", ", self.Heap[2 * i + 1])
+            print(self.Heap[i], "---", self.Heap[2*i], ", ",  self.Heap[2*i + 1])
 
 
 # mmh = MyMinHeap()
 # arr = [82, 67, 73, 3, 9, 2, 11, 34, 78, 90, 12, 23, 45, 89]
 # mmh.heapify(arr)
 # print(mmh.Heap[1:])
-# mmh.pr_heap()
-# mmh.delete(11)
-# print(mmh.Heap[1:])
-# mmh.pr_heap()
+# print(mmh.prnt())
 # a = MyMinHeap()
 # a.insert(2)
 # a.insert(3)
@@ -82,18 +74,16 @@ class MyMinHeap:
 # a.insert(53)
 # a.insert(77)
 # print(a.Heap[1:])
-# a.delete(23)
-# print(a.Heap[1:])
 # print(a.ext_min())
 # print(a.Heap[1:])
-# a.pr_heap()
-
+# print(a.prnt())
+#
 
 class MyMaxHeap:
 
     def __init__(self):
         self.size = 0
-        self.Heap = [10 ** 7]
+        self.Heap = [10**7]
 
     def insert(self, i):
         self.size += 1
@@ -145,6 +135,7 @@ class MyMaxHeap:
                 break
             print(self.Heap[i], "---", self.Heap[2 * i], ", ", self.Heap[2 * i + 1])
 
+#
 # mmh = MyMaxHeap()
 # arr = [82, 67, 73, 3, 9, 2, 11, 34, 78, 90, 12, 23, 45, 89]
 # mmh.heapify(arr)
