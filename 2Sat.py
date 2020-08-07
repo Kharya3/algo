@@ -14,12 +14,6 @@ class graph:
 
 
 def kosaraju():
-    # with open("SCC.txt") as file:
-    #     for line in file:
-    #         if line != "\n":
-    #             items = line.split()
-    #             gr.graph[int(items[0])] += [int(items[1])]
-
     explored = [False] * 2*num_nodes
     stack = []
     for i in gr.vertices():
