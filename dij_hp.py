@@ -97,4 +97,3 @@ with open("dijkstraData.txt") as file:
                 g.graph[int(lst[0])].append([x, y])
 k = g.djk(1)
 print(k)
-print(k[7], k[37], k[59], k[82], k[99], k[115], k[133], k[165], k[188], k[197])
