@@ -29,8 +29,8 @@ def karger(g):
 
 
 def main():
-    n = 100
-    o = 10000
+    n = 10
+    o = 100
     for i in range(n):
         m = karger(graph())
         if m < o:
