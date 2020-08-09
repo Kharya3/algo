@@ -28,7 +28,7 @@ def karger(G):
 
 def operation(n,G):
     i = 0
-    count = 10000
+    count = 100
     g = {}
     while i < n:
         g = copy.deepcopy(G)
@@ -46,7 +46,7 @@ def main():
         for line in file:
             lst = [int(s) for s in line.split()]
             G[lst[0]] = lst[1:]
-    print(operation(100,G))
+    print(operation(10,G))
 
 
 if __name__ == '__main__':
