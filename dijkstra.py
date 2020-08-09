@@ -1,10 +1,6 @@
 from collections import defaultdict
 
 
-# def find_min(w):
-#     return min(w, key=lambda x: x[1])
-
-
 def djk(s):
     X = {s}
     ln[s] = 0
@@ -28,5 +24,3 @@ with open("dijkstraData.txt") as file:
 ln = [mx] * 201
 djk(1)
 print(ln)
-print(ln[7], ln[37], ln[59], ln[82], ln[99], ln[115], ln[133], ln[165], ln[188], ln[197])
-# 2599 2610 2947 2052 2367 2399 2029 2442 2505 3068
