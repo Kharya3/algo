@@ -1,5 +1,5 @@
 d = {}
-with open("2sum.txt") as file:
+with open("x.txt") as file:
     i = 1
     for line in file:
         a = line.rstrip().split()
