@@ -24,12 +24,12 @@ def contract(graph, v, w):
     del graph[w]  # delete the absorbed vertex 'w'
 
 
-G ={}; n= 100
+G ={}; n= 10
 with open("dd") as file:
     for line in file:
         lst = [int(s) for s in line.split()]
         G[lst[0]] = lst[1:]
-m = 10000
+m = 100
 l = []
 for i in range(n):
     m, l=kargerMinCut(copy.deepcopy(G),m)
