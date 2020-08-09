@@ -45,8 +45,3 @@ n1 = len(arr)
 sorted = [0]*n1
 count = merge_sort(arr,sorted, 0, n1-1)
 print(count, sorted)
-# 2217140747
-# n = int(input("n:"))
-# l = list(map(int, input("\nEnter the numbers : ").split()))[:n]
-# count = merge_sort(l,0,n)
-# print(count)
