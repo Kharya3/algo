@@ -36,13 +36,7 @@ def merge_sort(a):
         c.clear()
     return cnt
 
-
-# n = int(input("n:"))
-# l = list(map(int, input("\nEnter the numbers : ").split()))[:n]
-# cnt = merge_sort(l)
-# print(l,"\n",cnt)
-
-f = open("Integer_Array.txt", 'r')
+f = open("file.txt", 'r')
 arr = []
 for line in f:
     a = line
@@ -51,5 +45,3 @@ for line in f:
 n1 = len(arr)
 count = merge_sort(arr)
 print(count, arr)
-# 2397819672
-
