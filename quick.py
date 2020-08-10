@@ -51,6 +51,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-# a[0] =
-# a[high] = 164123
-#  med = 138382
