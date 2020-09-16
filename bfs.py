@@ -11,7 +11,6 @@ def bfs(graph, vertex):
         for edge in graph[temp]:
             if edge not in explored:
                 level[edge] = level[temp]+1
-                print(edge)
                 explored[edge] = True
                 queue.append(edge)
 
